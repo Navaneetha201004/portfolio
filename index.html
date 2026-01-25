@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -11,6 +10,8 @@
 
 </head>
 <body>
+    <canvas id="starCanvas"></canvas>
+
 
 <header>
     <div class="logo">Navaneetha<span></span></div>
@@ -111,53 +112,53 @@
     </div>
 </section>
 
-<section id="contact" class="contact-section">
-  <h2 class="contact-title">Get In Touch</h2>
-  <p class="contact-subtitle">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Contact</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+</head>
+<body>
+
+<section class="contact-section" id="contact">
+  <h1 class="title">Get In Touch</h1>
+  <p class="subtitle">
     Have a question or want to work together? Feel free to reach out.
   </p>
 
-  <div class="contact-container">
+  <div class="contact-wrapper">
 
-    <!-- LEFT SIDE -->
-    <div class="contact-info">
+    <!-- LEFT BOX -->
+    <div class="contact-box">
       <h3>Contact Information</h3>
-
       <p>📧 navapinnai20@gmail.com</p>
-      <p>📍 Trichy, India</p>
-
-      <div class="social-icons">
-        <a href="#">GitHub</a>
-        <a href="#">LinkedIn</a>
-        <a href="#">Twitter</a>
-      </div>
+      <p>📞 +91 76048 96635</p>
+      <p>📍 Thanjavur, India</p>
     </div>
 
-    <!-- RIGHT SIDE -->
-    <form class="contact-form">
-      <label>Name *</label>
-      <input type="text" placeholder="Your Name" required />
-
-      <label>Email *</label>
-      <input type="email" placeholder="your.email@example.com" required />
-
-      <label>Subject</label>
-      <input type="text" placeholder="Subject" />
-
-      <label>Message *</label>
-      <textarea placeholder="Your message..." required></textarea>
-
+    <!-- RIGHT BOX -->
+    <form class="form-box" id="contact-form">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <input type="text" name="subject" placeholder="Subject" />
+      <textarea name="message" placeholder="Message" required></textarea>
       <button type="submit">Send Message</button>
     </form>
 
   </div>
 </section>
 
+<script src="script.js"></script>
+</body>
+</html>
+
 
 
 
 <script>
-const text = "HI, i'm web developer";
+const text = "i'm web developer";
 let index = 0;
 
 function typeEffect(){
@@ -191,6 +192,7 @@ function copyEmail() {
 <canvas id="starCanvas"></canvas>
 <script src="script.js"></script>
 
+<div id="star-container"></div>
 
 </body>
 </html>
