@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Nava | Full-Stack Developer</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<body>
+
+<header>
+    <div class="logo">Navaneetha<span></span></div>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+    </nav>
+</header>
+
+<section class="hero" id="home">
+    <div class="hero-text">
+        <h1>Navaneetha<br><span class="typing"></span></h1>
+        <p>
+            Frontend Developer focused on crafting visually engaging and intuitive user interfaces.<br>
+        </p>
+        
+    </div>
+    <div class="buttons">
+    <a href="#contact" class="btn primary">Contact Me</a>
+
+    <a href="Nava_CV.pdf" class="btn secondary" download>
+        resume
+    </a>
+</div>
+<div class="social-icons">
+    <a href="https://www.linkedin.com/in/navaneetha-u" target="_blank">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg">
+    </a>
+
+</div>
+
+
+<div class="profile-pic">
+    <img src="images/profile.jpeg" alt="Profile Photo">
+</div>
+
+
+</section>
+
+<section id="skills" class="skills-section">
+    <h2>My Skills</h2>
+
+    <div class="skills-box">
+
+        <div class="skill">
+            <span>HTML</span>
+            <div class="progress">
+                <div class="progress-bar html"></div>
+            </div>
+        </div>
+
+        <div class="skill">
+            <span>css</span>
+            <div class="progress">
+                <div class="progress-bar css"></div>
+            </div>
+        </div>
+
+        <div class="skill">
+            <span>javascript</span>
+            <div class="progress">
+                <div class="progress-bar js"></div>
+            </div>
+        </div>
+
+        <div class="skill">
+            <span>python</span>
+            <div class="progress">
+                <div class="progress-bar python"></div>
+            </div>
+        </div>
+
+        <div class="skill">
+            <span>php</span>
+            <div class="progress">
+               <div class="progress-bar php"></div>
+            </div>
+        </div>
+
+</section>
+
+
+<section class="projects" id="projects">
+    <h2>Projects</h2>
+    <div class="project-box">
+        <a href="ai-damage-detection.html" class="project-link">
+    <div class="card">
+        <h3>AI Damage Detection</h3>
+        <p>Image-based vehicle damage detection system.</p>
+    </div>
+</a>
+
+        <div class="card">
+            <h3>bike sales</h3>
+            <p>Next-Gen Bike Sales Platform with AI Insights</p>
+        </div>
+    </div>
+</section>
+
+<section class="contact" id="contact">
+    <h2>Contact Me</h2>
+
+    <div class="contact-box">
+        <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <span class="Email">navapinnai20@gmail.com</span>
+            <button onclick="copyEmail()">Copy Email</button>
+        </div>
+
+        <!-- Phone -->
+        <div class="contact-item">
+            <i class="fas fa-phone"></i>
+            <span class="phone-number">+91 76048 96635</span>
+        </div>
+
+    </div>
+</section>
+
+
+
+<script>
+const text = "i'm web developer";
+let index = 0;
+
+function typeEffect(){
+    if(index < text.length){
+        document.querySelector(".typing").innerHTML += text.charAt(index);
+        index++;
+        setTimeout(typeEffect, 120);
+    }
+}
+
+typeEffect();
+</script>
+
+<script>
+function copyEmail() {
+    const email = "navapinnai20@gmail.com"; // 👈 your email
+    navigator.clipboard.writeText(email);
+    alert("Email copied to clipboard!");
+}
+</script>
+
+<footer class="footer">
+    <p>Copyright © Navaneetha - All rights reserved</p>
+</footer>
+
+<!-- Star Trail Canvas -->
+<canvas id="starCanvas"></canvas>
+
+<script src="script.js"></script>
+
+<canvas id="starCanvas"></canvas>
+<script src="script.js"></script>
+
+
+</body>
+</html>
