@@ -635,120 +635,147 @@ html {
   z-index: 1;
 }
 
-/* ===== CONTACT SECTION ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  background: radial-gradient(circle at top, #0f3d2e, #020b08);
+  color: #aaffdd;
+}
+
 .contact-section {
   min-height: 100vh;
-  padding: 100px 8%;
-  background: radial-gradient(circle at top, #1a0033, #000);
-  color: #fff;
-}
-
-.contact-title {
+  padding: 80px 10%;
   text-align: center;
-  font-size: 48px;
-  font-weight: bold;
-  background: linear-gradient(90deg, #a855f7, #ec4899);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin-bottom: 15px;
 }
 
-.contact-subtitle {
-  text-align: center;
-  max-width: 700px;
-  margin: 0 auto 60px;
-  color: #cbd5e1;
-  font-size: 16px;
+.title {
+  font-size: 3rem;
+  color: #00ff99;
+  text-shadow: 0 0 20px #00ff99;
 }
 
-/* Layout */
-.contact-container {
-  display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 40px;
+.subtitle {
+  margin: 15px 0 60px;
+  color: #88ffcc;
 }
 
-/* LEFT CARD */
-.contact-card {
-  background: rgba(88, 28, 135, 0.2);
-  border-radius: 20px;
-  padding: 35px;
-  box-shadow: 0 0 40px rgba(168, 85, 247, 0.35);
-  backdrop-filter: blur(12px);
-}
-
-.contact-card h3 {
-  margin-bottom: 25px;
-  font-size: 22px;
-}
-
-.contact-item {
+.contact-wrapper {
   display: flex;
-  align-items: center;
-  gap: 15px;
+  gap: 40px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.contact-box,
+.form-box {
+  background: rgba(0, 255, 153, 0.05);
+  border: 1px solid #00ff99;
+  box-shadow: 0 0 25px #00ff99;
+  border-radius: 15px;
+  padding: 30px;
+  width: 350px;
+}
+
+.contact-box h3 {
   margin-bottom: 20px;
-  font-size: 15px;
-  color: #e5e7eb;
+  color: #00ff99;
 }
 
-.contact-item i {
-  font-size: 20px;
-  color: #c084fc;
+.contact-box p {
+  margin: 12px 0;
 }
 
-/* RIGHT FORM */
-.contact-form {
-  background: rgba(15, 23, 42, 0.7);
-  padding: 35px;
-  border-radius: 20px;
-  box-shadow: 0 0 40px rgba(168, 85, 247, 0.25);
-}
-
-.contact-form label {
-  font-size: 14px;
-  margin-bottom: 6px;
-  display: block;
-}
-
-.contact-form input,
-.contact-form textarea {
+.form-box input,
+.form-box textarea {
   width: 100%;
-  padding: 14px;
-  margin-bottom: 20px;
-  border-radius: 12px;
-  border: none;
-  outline: none;
-  background: #0f172a;
-  color: #fff;
-  font-size: 14px;
+  margin-bottom: 15px;
+  padding: 12px;
+  background: transparent;
+  border: 1px solid #00ff99;
+  color: #aaffdd;
+  border-radius: 8px;
 }
 
-.contact-form textarea {
+.form-box textarea {
+  height: 100px;
   resize: none;
-  height: 130px;
 }
 
-.contact-form button {
+.form-box button {
   width: 100%;
-  padding: 14px;
-  border-radius: 14px;
+  padding: 12px;
+  background: #00ff99;
+  color: #002b1c;
   border: none;
+  border-radius: 8px;
+  font-weight: bold;
   cursor: pointer;
-  font-size: 16px;
-  background: linear-gradient(90deg, #a855f7, #ec4899);
-  color: #fff;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: 0.3s;
 }
 
-.contact-form button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 0 25px rgba(236, 72, 153, 0.6);
+.form-box button:hover {
+  box-shadow: 0 0 25px #00ff99;
+  transform: scale(1.05);
 }
 
-/* Responsive */
-@media (max-width: 900px) {
-  .contact-container {
-    grid-template-columns: 1fr;
+#star-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+}
+
+.star {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: #00ff99;
+  box-shadow: 0 0 10px #00ff99, 0 0 20px #00ff99;
+  clip-path: polygon(
+    50% 0%,
+    61% 35%,
+    98% 35%,
+    68% 57%,
+    79% 91%,
+    50% 70%,
+    21% 91%,
+    32% 57%,
+    2% 35%,
+    39% 35%
+  );
+  animation: fadeOut 0.8s linear forwards;
+}
+
+@keyframes fadeOut {
+  to {
+    transform: scale(0) rotate(180deg);
+    opacity: 0;
   }
 }
 
+#starCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+body {
+  background: radial-gradient(circle at top, #04150d, #000);
+}
+
+#starCanvas {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
