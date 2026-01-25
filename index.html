@@ -111,24 +111,48 @@
     </div>
 </section>
 
-<section class="contact" id="contact">
-    <h2>Contact Me</h2>
+<section id="contact" class="contact-section">
+  <h2 class="contact-title">Get In Touch</h2>
+  <p class="contact-subtitle">
+    Have a question or want to work together? Feel free to reach out.
+  </p>
 
-    <div class="contact-box">
-        <div class="contact-item">
-            <i class="fas fa-envelope"></i>
-            <span class="Email">navapinnai20@gmail.com</span>
-            <button onclick="copyEmail()">Copy Email</button>
-        </div>
+  <div class="contact-container">
 
-        <!-- Phone -->
-        <div class="contact-item">
-            <i class="fas fa-phone"></i>
-            <span class="phone-number">+91 76048 96635</span>
-        </div>
+    <!-- LEFT SIDE -->
+    <div class="contact-info">
+      <h3>Contact Information</h3>
 
+      <p>📧 navapinnai20@gmail.com</p>
+      <p>📍 Trichy, India</p>
+
+      <div class="social-icons">
+        <a href="#">GitHub</a>
+        <a href="#">LinkedIn</a>
+        <a href="#">Twitter</a>
+      </div>
     </div>
+
+    <!-- RIGHT SIDE -->
+    <form class="contact-form">
+      <label>Name *</label>
+      <input type="text" placeholder="Your Name" required />
+
+      <label>Email *</label>
+      <input type="email" placeholder="your.email@example.com" required />
+
+      <label>Subject</label>
+      <input type="text" placeholder="Subject" />
+
+      <label>Message *</label>
+      <textarea placeholder="Your message..." required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+
+  </div>
 </section>
+
 
 
 
