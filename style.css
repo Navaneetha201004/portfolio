@@ -301,10 +301,10 @@ footer{
 }
 
 .html{ width:90%; }
-.python{ width:85%; }
-.mysql{ width:50%; }
-.js{ width:50%; }
-.django{ width:50%; }
+.css{ width:70%; }
+.js{ width:70%; }
+.python{ width:90%; }
+.php{ width:70%; }
 
 .skills{
     padding:80px 60px;
@@ -613,3 +613,25 @@ body{
     text-shadow: 0 0 10px #00ff99;
     transition: 0.3s;
 }
+
+html {
+    scroll-behavior: smooth;
+}
+
+#starCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* click block aagakoodadhu */
+  z-index: 1;
+}
+
+#starCanvas {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
