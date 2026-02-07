@@ -780,6 +780,7 @@ body {
   pointer-events: none;
 }
 
+<<<<<<< HEAD
 .social-links a {
   color: #00ff99;
   font-size: 28px;
@@ -802,3 +803,5 @@ body {
 .social-links i {
   text-decoration: none;
 }
+=======
+>>>>>>> 2acb9c4a1ab8fd6eda44fcb73e657f713036ef8e
