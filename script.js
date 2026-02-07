@@ -1,15 +1,31 @@
+
+const galaxyStars = [];
+
+for (let i = 0; i < 200; i++) {
+  galaxyStars.push({
+    x: Math.random() * window.innerWidth,
+    y: Math.random() * window.innerHeight,
+    r: Math.random() * 1.5,
+    speed: Math.random() * 0.2 + 0.05,
+    alpha: Math.random()
+  });
+}
+
+/* ================= STAR CANVAS ================= */
+
+
 const canvas = document.getElementById("starCanvas");
 const ctx = canvas.getContext("2d");
 
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-
-const stars = [];
-
-window.addEventListener("resize", () => {
+function resizeCanvas() {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
-});
+}
+resizeCanvas();
+
+window.addEventListener("resize", resizeCanvas);
+
+const stars = [];
 
 document.addEventListener("mousemove", (e) => {
   for (let i = 0; i < 3; i++) {
@@ -24,7 +40,7 @@ document.addEventListener("mousemove", (e) => {
   }
 });
 
-function animate() {
+function animateStars() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
   for (let i = 0; i < stars.length; i++) {
@@ -46,7 +62,48 @@ function animate() {
     }
   }
 
-  requestAnimationFrame(animate);
+  // 🌌 Galaxy background stars
+for (const g of galaxyStars) {
+  ctx.fillStyle = `rgba(0,255,170,${g.alpha})`;
+  ctx.beginPath();
+  ctx.arc(g.x, g.y, g.r, 0, Math.PI * 2);
+  ctx.fill();
+
+  g.y += g.speed;
+  if (g.y > canvas.height) {
+    g.y = 0;
+    g.x = Math.random() * canvas.width;
+  }
 }
 
-animate();
+
+  requestAnimationFrame(animateStars);
+}
+
+animateStars();
+
+/* ================= EMAIL JS ================= */
+
+// ⚠️ ITHA MATTUM NEE CHANGE PANNANUM
+emailjs.init("YOUR_PUBLIC_KEY");
+
+document
+  .getElementById("contact-form")
+  .addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    emailjs.sendForm(
+      "YOUR_SERVICE_ID",
+      "YOUR_TEMPLATE_ID",
+      this
+    ).then(
+      () => {
+        alert("Message sent successfully 🚀");
+        this.reset();
+      },
+      (error) => {
+        alert("Failed to send message ❌");
+        console.log(error);
+      }
+    );
+  });
